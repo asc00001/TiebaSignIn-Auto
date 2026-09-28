@@ -231,6 +231,7 @@ class TestPushPlus(unittest.TestCase):
         payload = fake_http.post.call_args[1].get("json", {})
         self.assertEqual(url, "https://www.pushplus.plus/send")
         self.assertEqual(payload.get("token"), "mytoken")
+        self.assertEqual(payload.get("channel"), "wechat")
         self.assertFalse(fake_http.get.called)
 
     def test_send_pushplus_rejected_code(self):

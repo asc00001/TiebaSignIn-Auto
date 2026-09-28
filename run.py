@@ -161,6 +161,7 @@ def send_pushplus(
             "title": "贴吧签到结果",
             "content": content,
             "template": "html",
+            "channel": "wechat",
         }
         client = http or requests
         r = client.post("https://www.pushplus.plus/send", json=payload, timeout=10)
